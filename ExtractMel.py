@@ -102,7 +102,7 @@ def read_IEMOCAP():
     filter_num = 40
     pernums_test = np.arange(tnum)#remerber each utterance contain how many segments
     pernums_valid = np.arange(vnum)
-    rootdir = '/home/jamhan/hxj/datasets/IEMOCAP_full_release'
+    rootdir = '/git/datasets/IEMOCAP_full_release'
     
     mean1,std1,mean2,std2,mean3,std3 = load_data()
     

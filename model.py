@@ -17,6 +17,7 @@ import cPickle
 from sklearn.metrics import recall_score as recall
 from sklearn.metrics import confusion_matrix as confusion
 import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # Force TF to use only the CPU
 
 tf.app.flags.DEFINE_integer('num_epoch', 5000, 'The number of epoches for training.')
 tf.app.flags.DEFINE_integer('num_classes', 4, 'The number of emotion classes.')
@@ -34,6 +35,8 @@ tf.app.flags.DEFINE_string  ('checkpoint', './checkpoint/', 'the checkpoint dir'
 tf.app.flags.DEFINE_string  ('model_name', 'model4.ckpt', 'model name')
 
 FLAGS = tf.app.flags.FLAGS
+
+
 
 def load_data(in_dir):
     f = open(in_dir,'rb')
